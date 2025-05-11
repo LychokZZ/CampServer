@@ -15,7 +15,7 @@ const PORT = 3000;
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: 'https://lychokzz.github.io/CampFront',
+    origin: 'https://lychokzz.github.io',
     methods: ['GET', 'POST'],
     credentials: true,
   }
@@ -23,7 +23,7 @@ const io = new Server(server, {
 
 
 app.use(cors({
-  origin: 'https://lychokzz.github.io/CampFront', // адрес твоего фронтенда
+  origin: 'https://lychokzz.github.io', // адрес твоего фронтенда
   credentials: true,               // если нужны cookies или авторизация по токену
 }));
 app.use(express.json());
