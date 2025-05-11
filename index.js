@@ -83,17 +83,17 @@ io.on('connection', (socket) => {
       return;
     }
     (async () => {
-      /*const fetch = (await import('node-fetch')).default;*/
+      const fetch = (await import('node-fetch')).default;
     
       const polych = reciver;
     
       if (reciver === "Bob" || reciver === "Regina Lavaren" || reciver === "Alex") {
-        /*const response = await fetch('https://api.quotable.io/random');
+        const response = await fetch('https://zenquotes.io/api/random');
         const data = await response.json();
-        const quote = `${data.content} — ${data.author}`;*/ 
+        const quote = `${data.content} — ${data.author}`;
     
         io.to(room).emit('chat message', {
-          message: ' Привет (Це повідомлення надіслано ботом, воно зникне після перезавантаження)',
+          message: `Привіт! Ось випадкова цитата: "${quote}"`,
           room,
           sender: polych,
           reciver
