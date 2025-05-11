@@ -89,8 +89,8 @@ io.on('connection', (socket) => {
     
       if (reciver === "Bob" || reciver === "Regina Lavaren" || reciver === "Alex") {
         const response = await fetch('https://zenquotes.io/api/random');
-        const data = await response.json();
-        const quote = `${data.content} — ${data.author}`;
+        const datas = await response.json();
+        const quote = `${datas[0].q} — ${datas[0].a}`;
     
         io.to(room).emit('chat message', {
           message: `Привіт! Ось випадкова цитата: "${quote}"`,
