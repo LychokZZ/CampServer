@@ -32,12 +32,9 @@ app.use(cors());
 app.use(express.json());
 
 
-mongoose.connect(`mongodb+srv://admin:admin@cluster0.m4azltl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('MongoDB подключена'))
-.catch((err) => console.error('Ошибка подключения к MongoDB:', err));
+mongoose.connect('mongodb+srv://admin:admin@cluster0.m4azltl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+  .then(() => console.log('MongoDB подключена'))
+  .catch((err) => console.error('Ошибка подключения к MongoDB:', err));
 
 
 const activeRooms = {}; // ВЫНЕСТИ наружу, чтобы сохранялось между событиями
