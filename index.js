@@ -21,11 +21,14 @@ const io = new Server(server, {
   }
 });
 
+const allowedOrigins = [
+  "http://localhost:3000", 
+  "https://lychokzz.github.io", 
+  "https://server-eight-lac-10.vercel.app",
+  "https://server-lychokzzs-projects.vercel.app"
+];
 
-app.use(cors({
-  origin: 'https://lychokzz.github.io', // адрес твоего фронтенда
-  credentials: true,               // если нужны cookies или авторизация по токену
-}));
+app.use(cors());
 app.use(express.json());
 
 
